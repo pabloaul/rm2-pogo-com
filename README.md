@@ -35,7 +35,7 @@ Possible commands are:
 - 04 : device_class (uint32_t)
 - 05 : serial number (char[15])
 - 06 : firmware_start_address (uint32_t)
-- 07 : device_name
+- 07 : device_name (12 bytes)
 - 10 : keyboard_layout (uint8_t)
 - 11 : language (1 byte)
 - 12 : rm_serial_number (33 bytes)
