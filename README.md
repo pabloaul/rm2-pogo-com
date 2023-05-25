@@ -12,15 +12,14 @@ The keyboard connected to it talks at 115200 baud.
 Pretty much default everything.
 
 ## Structure of a serial frame sent via ID pin
-Byte[1]: Direction
-- 2E (keyboard to device)
-- 3A (device to keyboard)
+![Packet Structure](https://github.com/pabloaul/rm2-pogo-com/assets/35423980/e2cf386e-0075-4bc8-94dc-5746810920ad)
 
-Byte[2]: Data length (n)
-
-Byte[n]: Data
-
-Byte[1]: CRC Checksum
+- Direction:
+  - 2E (keyboard to device)
+  - 3A (device to keyboard)
+- Length:   amount of bytes in the data part + 1
+- Data:     refer to data structure
+- Checksum: inversion of sum of all data bytes + 1
 
 ## Keyboard connected flow
 - Tablet notices (pull-down/pull-up?) on pogo pins
@@ -28,5 +27,5 @@ Byte[1]: CRC Checksum
 - Tablet requests register read (batched) (cmd 20) -> keyboard responds success with data requested (content explained in later commit).
 - Tablet requests an auth code (cmd 09) -> keyboard responds with the key "@O8eO77%o^4*1GE@oeodd#WMa%8Kr6v@" and is zero-terminated.
 - Tablet goes into "app mode" (cmd 04) -> keyboard acknowledges.
-
+![init](https://github.com/pabloaul/rm2-pogo-com/assets/35423980/907e60ae-b951-4206-802d-f7f9d35d2549)
 This entire negotiation happens within 30ms.
