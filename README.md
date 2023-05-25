@@ -15,8 +15,11 @@ Pretty much default everything.
 Byte[1]: Direction
 - 2E (keyboard to device)
 - 3A (device to keyboard)
+
 Byte[2]: Data length (n)
+
 Byte[n]: Data
+
 Byte[1]: CRC Checksum
 
 ## Keyboard connected flow
