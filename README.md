@@ -48,3 +48,7 @@ Possible commands are:
 - Tablet goes into "app mode" (cmd 04) -> keyboard acknowledges.
 ![init](https://github.com/pabloaul/rm2-pogo-com/assets/35423980/907e60ae-b951-4206-802d-f7f9d35d2549)
 This entire negotiation happens within 30ms.
+
+## Related projects
+![Jonas - USB Keyboard to pogo adapter using a Pi Pico](https://github.com/jonasoberschweiber/remarkable-keyboard-adapter/)
+![Dudlushka - Resin printed pogo adapter and circutry using Arduino](https://github.com/Dudlushka/Remarkable_TypeFolio_Pretender)
