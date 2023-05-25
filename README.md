@@ -30,10 +30,20 @@ Possible commands are:
 - 40 : keep-alive (sent from keyboard to device, every 0.5s on no activity, no arguments)
 - 51 : keystroke (sent from keyboard to device, contains key pressed and key counter)
 
+## Known registers
+- 02 : firmware version (2x uint8_t) 
+- 04 : device_class (uint32_t)
+- 05 : serial number (char[15])
+- 06 : firmware_start_address (uint32_t)
+- 07 : device_name
+- 10 : keyboard_layout (uint8_t)
+- 11 : language (1 byte)
+- 12 : rm_serial_number (33 bytes)
+
 ## Keyboard connection flow
 - Tablet notices (pull-down/pull-up?) on pogo pins
-- Tablet requests register read (cmd 20) -> keyboard responds success, reading "B<0x0c>rMkeyboard01"
-- Tablet requests register read (batched) (cmd 20) -> keyboard responds success with data requested (content explained in later commit).
+- Tablet requests register read (cmd 20) -> keyboard responds success, reading "rMkeyboard01"
+- Tablet requests register read (cmd 20, batched) -> keyboard responds success with data requested.
 - Tablet requests an auth code (cmd 09) -> keyboard responds with the key "@O8eO77%o^4*1GE@oeodd#WMa%8Kr6v@" and is zero-terminated.
 - Tablet goes into "app mode" (cmd 04) -> keyboard acknowledges.
 ![init](https://github.com/pabloaul/rm2-pogo-com/assets/35423980/907e60ae-b951-4206-802d-f7f9d35d2549)
