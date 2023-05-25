@@ -21,7 +21,16 @@ Pretty much default everything.
 - Data:     refer to data structure
 - Checksum: inversion of sum of all data bytes + 1
 
-## Keyboard connected flow
+## Data Structure
+Data content usually consists of a command and arguments given to it.
+Possible commands are:
+- 04 : enter "app mode"
+- 09 : request auth key from peripheral (sent from device to keyboard, no arguments)
+- 20 : read register (batching possible, arguments are which registers to read)
+- 40 : keep-alive (sent from keyboard to device, every 0.5s on no activity, no arguments)
+- 51 : keystroke (sent from keyboard to device, contains key pressed and key counter)
+
+## Keyboard connection flow
 - Tablet notices (pull-down/pull-up?) on pogo pins
 - Tablet requests register read (cmd 20) -> keyboard responds success, reading "B<0x0c>rMkeyboard01"
 - Tablet requests register read (batched) (cmd 20) -> keyboard responds success with data requested (content explained in later commit).
