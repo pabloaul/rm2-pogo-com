@@ -2,7 +2,7 @@
 
 ## Hardware
 The reMarkable 2 tablet has two USB interfaces, one of which is in the form of USB-C at the bottom, while the other is in the form of 5 pins on the bottom left side. 
-The USB interfaces are driven by a [MAX77818](https://www.analog.com/media/en/technical-documentation/data-sheets/MAX77818.pdf) capable of USB back power (OTG) which is however only wired to the pogo pins. 
+The USB interfaces are driven by a [MAX77818](https://www.analog.com/media/en/technical-documentation/data-sheets/MAX77818.pdf) capable of USB back power (OTG) for which the back power capable bus is wired to the pogo pins. 
 ![pins](https://github.com/pabloaul/rm2-pogo-com/assets/35423980/1daf98c5-a366-467d-9aa9-9fcda3983a65)
 
 
