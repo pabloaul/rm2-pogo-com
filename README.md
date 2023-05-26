@@ -14,20 +14,26 @@ The ID pin is capable of talking single wire serial at 115200 baud 8n1.
   - 2E (keyboard to device)
   - 3A (device to keyboard)
 - Length:   amount of bytes in the data part + 1
-- Data:     refer to data structure
+- Data:     refer to commands
 - Checksum: inversion of sum of all data bytes + 1
 
-## Data Structure
+## Commands
 Data content usually consists of a command and arguments given to it.
 Possible commands are:
-- 04 : enter "app mode"
-- 05!: enter suspend
-- 09 : request auth key from peripheral (sent from device to keyboard, no arguments)
-- 0F!: reboot
-- 20 : read register (batching possible, arguments are which registers to read)
-- 21!: write register 
-- 40 : keep-alive (sent from keyboard to device, every 0.5s on no activity, no arguments)
-- 51 : keystroke (sent from keyboard to device, contains key pressed and key counter)
+- **Tablet to keyboard:**
+  - 02!: firmware write and validate
+  - 04 : enter "app mode"
+  - 05!: enter suspend
+  - 06!: firmware write and validate (CRC)
+  - 07!: firmware write packet
+  - 08!: firmware write init
+  - 09 : request auth key from peripheral (sent from device to keyboard, no arguments)
+  - 0F!: reboot
+  - 20 : read register (batching possible, arguments are which registers to read)
+  - 21!: write register 
+- **Keyboard to tablet:**
+  - 40 : keep-alive (every 0.5s on no activity, no arguments)
+  - 51 : keystroke (contains key pressed and key counter)
 
 ## Known registers
 - 02 : firmware version (2 byte) 
