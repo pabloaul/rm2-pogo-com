@@ -50,5 +50,5 @@ Possible commands are:
 This entire negotiation happens within 30ms.
 
 ## Related projects
-![Jonas - USB Keyboard to pogo adapter using a Pi Pico](https://github.com/jonasoberschweiber/remarkable-keyboard-adapter/)
+![Jonas - USB Keyboard to pogo adapter using a Pi Pico](https://github.com/jonasoberschweiber/remarkable-keyboard-adapter/)\
 ![Dudlushka - Resin printed pogo adapter and circutry using Arduino](https://github.com/Dudlushka/Remarkable_TypeFolio_Pretender)
